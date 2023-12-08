@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block content %}
+	<div class="container pt-3">
+		<h1 class="mb-3">Posts</h1>
+
+		{% for post in posts %}
+			<div id="thread-{{ post.id }}" class="card mb-4">
+				<div class="card-body">
+					<div class="row">
+						<div class="col-sm-3">
+							<div class="row">
+								<div class="col-auto">
+                                    <div>
+                                        <img class="rounded-circle" width="30px" height="30px" style="object-fit: cover"
+                                             src="https://thepublicvoice.org/wp-content/uploads/2019/10/TPV-people-hp.jpg"
+                                             alt="">
+                                    </div>
+								</div>
+								<div class="col">
+{#									<small>#}
+{#										{% if post.is_anonymous %}#}
+{#											<div>{{ candidate.position }}</div>#}
+{#										{% else %}#}
+{#											<div>{{ candidate.name }}</div>#}
+{#										{% endif %}#}
+{#										<div class="text-secondary">#}
+{#											<div>#}
+{#												${{ candidate.salary_min }}, {{ candidate.experience_years }} years of experience,#}
+{#											</div>#}
+{#											<div>#}
+{#												{{ candidate.english_level }}, {{ candidate.country_code }}{% if candidate.location %}, {{ candidate.location }}{% endif %}#}
+{#											</div>#}
+{#										</div>#}
+{#									</small>#}
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-auto">
+							<small class="text-secondary">
+								{{ post.created_at|date('d.m.Y') }}
+							</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock content %}

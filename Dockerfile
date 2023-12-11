@@ -1,6 +1,6 @@
 FROM python:3.10.13
 
-WORKDIR /app
+WORKDIR /backend
 
 ADD requirements.txt .
 RUN pip install -r requirements.txt

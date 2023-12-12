@@ -76,16 +76,7 @@ WSGI_APPLICATION = 'django_ci_cd.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB'),
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': 'db',  # Use the service name from docker-compose.yml
-        'PORT': '5432',
-    }
-}
+
 
 CACHES = {
     'default': {

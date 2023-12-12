@@ -10,6 +10,6 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Apply migration
-        run: python manage.py migrate
+        run: python manage.py migrate --settings=django_ci_cd.settings.test
       - name: Run tests
-        run: python manage.py test
+        run: python manage.py test --settings=django_ci_cd.settings.test

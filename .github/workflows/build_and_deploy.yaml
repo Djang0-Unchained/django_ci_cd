@@ -17,3 +17,22 @@ jobs:
         run: python manage.py migrate --settings=django_ci_cd.settings.test
       - name: Run tests
         run: python manage.py test --settings=django_ci_cd.settings.test
+
+
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Building...
+        uses: actions/checkout@v3
+        run: echo "building image..."
+
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy...
+        uses: actions/checkout@v3
+        run: echo "Deploy..."
